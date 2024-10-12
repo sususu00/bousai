@@ -1,0 +1,480 @@
+@charset "UTF-8";
+
+/* ---画面全体共通------------------------------------------ */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    /* 背景色を薄いグレーに */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    /*（ビューポートの高さ） */
+    display: flex;
+    justify-content: center;
+    /* 水平方向の中央揃え */
+    align-items: center;
+    /* 垂直方向の中央揃え */
+}
+
+/* headerとsectionを上下中央に揃える */
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* ビューポート全体の高さを確保 */
+}
+
+
+header {
+    width: 80%;
+    text-align: center;
+    margin-bottom: 20px;
+    /* header とフォームの間にスペース */
+}
+
+/* 見出し1（グラデーション） */
+h1 {
+    padding: 1rem 3rem;
+    -webkit-transform: skew(-15deg);
+    transform: skew(-15deg);
+    color: #fff;
+    background-image: -webkit-gradient(linear, right top, left top, from(#2196F3), to(#1565C0));
+    background-image: -webkit-linear-gradient(right, #2196F3 0%, #1565C0 100%);
+    background-image: linear-gradient(to left, #2196F3 0%, #1565C0 100%);
+    
+}
+/* 見出し2 (左右２重線)*/
+h2 {
+    position: relative;
+    display: inline-block;
+    padding: 0 65px;
+    text-align: center;
+  }
+  
+  h2:before,
+  h2:after {
+    position: absolute;
+    top: calc(50% - 3px);
+    width: 50px;
+    height: 6px;
+    content: '';
+    border-top: solid 2px #000;
+    border-bottom: solid 2px #000;
+  }
+  
+  h2:before {
+    left: 0;
+  }
+  
+  h2:after {
+    right: 0;
+  }
+/* 見出し３(吹き出し風) */
+h3 {
+    position: relative;
+    padding: 1.5rem 2rem;
+    border: 3px solid #d8d8d8;
+    border-radius: 10px;
+    background-color: white;
+    border-bottom: 3px solid #d8d8d8; /* 下線にボーダーを適用 */
+    border-left: none; /* 左線を消す */
+    border-right: none; /* 右線を消す */
+    border-top: none; /* 上線を消す */
+  }
+  
+  h3:before {
+    position: absolute;
+    bottom: -14px;
+    left: 1em;
+    width: 0;
+    height: 0;
+    content: '';
+    border-width: 14px 12px 0 12px;
+    border-style: solid;
+    border-color: #d8d8d8 transparent transparent transparent;
+  }
+  
+  h3:after {
+    position: absolute;
+    bottom: -10px;
+    left: 1em;
+    width: 0;
+    height: 0;
+    content: '';
+    border-width: 14px 12px 0 12px;
+    border-style: solid;
+    border-color: #f9f9f9 transparent transparent transparent;
+  }
+
+/* フォーム全体のスタイル */
+
+section {
+    background-color: #ffffff;/* フォームの背景色を白に */
+    border-radius: 10px;/* 角を丸くする */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);/* 影を追加 */
+    display: flex;
+    flex-direction: column;
+    width: 100%;/* フォームの幅を指定 */
+    text-align: center;
+    margin-bottom: 50px;
+}
+section form{
+    width: 100%;
+
+}
+/* 入力フィールドのスタイル */
+input[type="text"],
+input[type="password"],
+input[type="date"] {
+    width: 70%;
+    padding: 10px;
+    margin: 10px 0 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* ラジオボタンのスタイル */
+.radio_btn {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.radio_btn label {
+    cursor: pointer;
+}
+
+
+
+/* ---HOME画面---------------------------- */
+#home_btns {
+    width: 60%;
+    padding: 20px 0;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    /* 角を丸くする */
+   
+}
+
+/* HOME画面のボタン */
+#home_btns button {
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    padding: 20px 20px;
+    margin: 20px 0;
+    background-color: #4CAF50;
+    color: white;
+    display: inline-block;
+    border-radius: 5px;
+    border-bottom: 0.1875em solid #1B5E20;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+/* HOME画面のボタン ホバー時 */
+#home_btns button:hover {
+    border-bottom-color: transparent;
+	transform: translateY(0.1875em);
+}
+
+/* HOME画面のログアウトボタン */
+#home_btns button:last-child {
+    border-bottom:0.1875em solid #000 ;
+    background-color:#666;
+    color:white;
+}
+
+/* HOME画面のログアウトボタン ホバー時 */
+#home_btns button:last-child:hover {
+    border-bottom-color: transparent;
+	transform: translateY(0.1875em);
+}
+
+/* 新規会員登録リンクのスタイル */
+a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* フォーム下部の段落 */
+p {
+    margin-top: 20px;
+    font-size: 100%;
+    color: #666;
+}
+
+
+
+
+/* --会員登録変更、新規会員登録画面----------- */
+.reg_table {
+    width: 100%;
+}
+
+/* ------ログイン画面遷移ボタンと登録ボタンと戻るボタン---------------- */
+/* ログイン画面遷移ボタンのスタイル */
+#login_btn {
+    font-size: 20px;
+    font-weight: bold;
+    width: 30%;
+    padding: 10px 10px;
+    margin: 20px 0;
+    background-color: #4CAF50;
+    color: white;
+    display: inline-block;
+    border-radius: 5px;
+    border-bottom: 0.1875em solid #1B5E20;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+#login_btn:hover {
+    border-bottom-color: transparent;
+	transform: translateY(0.1875em);
+}
+
+
+.return_btns {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    padding: 20px 0;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    /* 角を丸くする */
+
+}
+
+/* 登録ボタンのスタイル */
+button[type="submit"] {
+    font-size: 20px;
+    font-weight: bold;
+    width: 30%;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #4CAF50;
+    color: white;
+    display: inline-block;
+    border-radius: 5px;
+    border-bottom: 0.1875em solid #1B5E20;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button[type="submit"]:hover {
+    border-bottom-color: transparent;
+	transform: translateY(0.1875em);
+}
+
+/*戻るボタンのスタイル*/
+button[type="button"] {
+    font-size: 16px;
+    font-weight: bold;
+    width: 20%;
+    padding: 20px 20px;
+    margin: 20px 0;
+    background-color: #dddddd;
+    display: inline-block;
+    border-radius: 5px;
+    border-bottom: 0.1875em solid darkgray;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button[type="button"]:hover {
+    border-bottom-color: transparent;
+	transform: translateY(0.1875em);
+}
+
+
+
+/* ---ログアウト画面------------------------------ */
+
+/* ログアウトボタン */
+.logout_button {
+    font-size: 18px;
+    font-weight: bold;
+    width: 30%;
+    padding: 20px 20px;
+    margin: 20px 0;
+    background-color: #666;
+    color: white;
+    display: inline-block;
+    border-radius: 5px;
+    border-bottom: 0.1875em solid #000;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.logout_button:hover {
+    border-bottom-color: transparent;
+	transform: translateY(0.1875em);
+}
+
+
+/* ---防災リュック登録画面------------------------------*/
+
+
+#backpack_header {
+    width: 100%;
+    padding: 20px 0;
+    margin: 0 auto;
+}
+
+#backpack_header button {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 20px 10px;
+}
+
+
+#backpack-table {
+    width: 100%;
+    /* テーブルの幅を調整、必要に応じて変更可能 */
+    margin: 0 auto;
+    /* 真ん中に寄せる */
+    border-collapse: collapse;
+    /* 枠線を重ねてすっきり見せる */
+    margin-bottom: 20px;
+}
+
+/* ヘッダーのスタイル */
+#backpack-table th:first-child {
+    border-radius: 5px 0 0 0;
+}
+
+#backpack-table th:last-child {
+    border-radius: 0 5px 0 0;
+}
+
+#backpack-table th {
+    background: linear-gradient(#829ebc, #225588);
+    /* グラデーション背景 */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: sticky;
+    /* スクロールしても固定する */
+    top: 0;
+    /* スクロール時に画面上部に固定 */
+    z-index: 1;
+    /* 他のコンテンツの上に表示するためのスタッキング順序 */
+    white-space: nowrap;
+    /* 文字の折り返しを防ぐ */
+}
+
+/* テーブルデータのスタイル */
+#backpack-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+/* テーブルデータの2行目３行目は文字の折り返しを防ぐ */
+#backpack-table td:nth-child(2),
+#backpack-table td:nth-child(3) {
+    white-space: nowrap;
+}
+
+
+/* テーブルの行にホバーした時のスタイル */
+#backpack-table tr:hover {
+    background-color: #f5f5f5;
+    /* 薄いグレーに変化 */
+}
+
+/* インプットボックスのスタイル */
+#backpack-table input[type="text"],
+#backpack-table input[type="date"] {
+    width: 90%;
+    padding: 6px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+
+
+
+
+/* スマホ用のスタイル（画面幅が768px以下） */
+@media screen and (max-width: 768px) {
+  
+    /* アプリ名 */
+    h1,
+    h2{
+        font-size:16px;
+    }
+    h3{
+        font-size: 15px;
+    }
+    button[type="submit"] {
+        width: 40%;
+    }
+    button[type="button"]{
+        width: 35%;
+    }
+    .reg_table td{
+        font-size: 14px;
+    }
+    #login_btn{
+        width: 45%;
+    }
+    .logout_button{
+        font-size: 16px;
+        width: 40%;
+    }
+    #home_btns button{
+        font-size: 14px;
+    }
+    
+   
+    #backpack-table{
+        font-size: 14px;
+        table-layout: fixed;
+        width: 100%;
+    }
+    /* テーブルデータの2行目３行目は文字の折り返しを防ぐ */
+    #backpack-table td:nth-child(2),
+    #backpack-table td:nth-child(3) {
+     white-space: normal;
+    }
+
+    
+
+    
+
+    
+
+}
