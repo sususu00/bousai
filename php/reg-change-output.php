@@ -62,8 +62,9 @@ if ($deleteData) {
     $sql = $pdo->prepare('DELETE FROM t_backpack WHERE user_id = ?');
     $sql->execute([$_SESSION['users']['id']]);
 
-    echo "年齢(65歳以上になった)、性別、育児中いずれかの変更がありましたので<br>ユーザーのバックパックデータを削除しました。<br>";
-
+    $alert = '<script>alert("年齢(65歳以上か以下か)、性別、育児の有無\nいずれかの変更がありましたので、\nユーザーのバックパックデータをリセットしました。");</script>';
+    echo $alert;
+   
 }
 
 
